@@ -7,15 +7,11 @@ ENV PYTHONUNBUFFERED 1
 
 WORKDIR /app
 
-
-COPY myproject/requirements.txt /app/requirements.txt
+COPY requirements.txt /app/requirements.txt
 RUN pip install --upgrade pip \
     && pip install -r requirements.txt
 
-
-COPY myproject /app
-
-
+COPY . /app/
 
 EXPOSE 8000
 
