@@ -30,4 +30,4 @@ urlpatterns = [
     path('reports/', views.reports, name='reports'),
     path('profile/', views.profile, name='profile'),
 ]
-ALLOWED_HOSTS = ['https://cloudfinal-1000771588940.asia-south1.run.app/']
+ALLOWED_HOSTS = ['*']
