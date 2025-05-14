@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+ALLOWED_HOSTS = ['*']
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -74,27 +75,13 @@ WSGI_APPLICATION = "myproject.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'myfinancetool',
-        'USER': 'postgres',
-        'PASSWORD': 'NAVEEN',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
-
-
-
-
-SESSION_ENGINE = "django.contrib.sessions.backends.cached_db"  # Default session engine
-
-# Optional settings to adjust session cookie behavior
-SESSION_COOKIE_NAME = "sessionid"
-SESSION_COOKIE_SECURE = True  # Only send cookies over HTTPS
-SESSION_COOKIE_HTTPONLY = True  # Restrict access to cookies from JavaScript
-
 
 
 # Password validation
@@ -135,9 +122,42 @@ STATIC_URL = "static/"
 
 LOGIN_URL = '/login/'
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+import os
+import dj_database_url
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+
+# PostgreSQL database configuration
+DATABASES = {
+    'default': dj_database_url.config(
+        default='sqlite:///db.sqlite3', conn_max_age=600
+    )
+}
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'your_db_name',
+        'USER': 'your_user@your_server',
+        'PASSWORD': 'your_password',
+        'HOST': 'your_server.postgres.database.azure.com',
+        'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',
+        },
+    }
+}
+
+
+
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
