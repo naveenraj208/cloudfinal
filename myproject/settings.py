@@ -76,11 +76,16 @@ WSGI_APPLICATION = "myproject.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'myfinancetool',       # Your DB name
+        'USER': 'postgres',            # Cloud SQL username
+        'PASSWORD': 'NAVEEN',   # The password you set
+        'HOST': '34.47.160.208',       # Your public IP of Cloud SQL
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation
