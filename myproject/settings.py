@@ -83,6 +83,7 @@ DATABASES = {
         'PASSWORD': 'NAVEEN',   # The password you set
         'HOST': '34.47.160.208',       # Your public IP of Cloud SQL
         'PORT': '5432',
+
     }
 }
 
