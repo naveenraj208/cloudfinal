@@ -79,13 +79,20 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'myfinancetool',
-        'USER': 'postgres',            
-        'PASSWORD': 'NAVEEN',   
+        'USER': 'postgres',
+        'PASSWORD': 'NAVEEN',
         'HOST': '34.47.160.208',
         'PORT': '5432',
-
     }
 }
+
+
+SESSION_ENGINE = "django.contrib.sessions.backends.cached_db"  # Default session engine
+
+# Optional settings to adjust session cookie behavior
+SESSION_COOKIE_NAME = "sessionid"
+SESSION_COOKIE_SECURE = True  # Only send cookies over HTTPS
+SESSION_COOKIE_HTTPONLY = True  # Restrict access to cookies from JavaScript
 
 
 
