@@ -134,8 +134,8 @@ LOGIN_URL = '/login/'
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+ALLOWED_HOSTS = ['cloudfinal-1000771588940.asia-south1.run.app']
 
-ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = [
     'https://cloudfinal-1000771588940.asia-south1.run.app',
     'http://cloudfinal-1000771588940.asia-south1.run.app',
