@@ -81,10 +81,11 @@ DATABASES = {
         'NAME': 'myfinancetool',
         'USER': 'postgres',
         'PASSWORD': 'NAVEEN',
-        'HOST': '34.47.160.208',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
+
 
 
 SESSION_ENGINE = "django.contrib.sessions.backends.cached_db"  # Default session engine
